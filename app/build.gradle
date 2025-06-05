@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.tapjackingdemo' // Matches AndroidManifest.xml
+    compileSdk 33 // Example: API 33 (Android 13)
+
+    defaultConfig {
+        applicationId "com.example.tapjackingdemo"
+        minSdk 21 // Example: API 21 (Android 5.0 Lollipop)
+        targetSdk 33 // Example: API 33 (Android 13)
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Educational comment: For a real release, consider enabling minifyEnabled and configuring ProGuard rules.
+        }
+        debug {
+            // Educational comment: Debug build type configuration.
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    // If view binding or data binding were used, they would be enabled here:
+    // viewBinding {
+    //     enabled = true
+    // }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1' // Example version
+    implementation 'androidx.appcompat:appcompat:1.6.1' // Example version
+    implementation 'com.google.android.material:material:1.9.0' // Example version
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Example, though not strictly used in this simple layout
+
+    // Testing dependencies (optional for this demo, but good practice)
+    // testImplementation 'junit:junit:4.13.2'
+    // androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    // androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Educational comment: These are common dependencies for an Android app.
+    // - core-ktx: Kotlin extensions for Android core libraries.
+    // - appcompat: Provides backward compatibility for newer Android features.
+    // - material: Provides Material Design components.
+    // - constraintlayout: A flexible layout manager (though our layouts are simple LinearLayouts/FrameLayouts).
+}

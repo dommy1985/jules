@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal() // Standard repository for Gradle plugins
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // Recommended for security and build consistency
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "TapjackingDemo" // Sets the name of the root project
+include ':app' // Includes the 'app' module in the build

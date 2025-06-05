@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/overlay_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"  <!-- Semi-transparent background to make it slightly visible for demo -->
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".OverlayActivity">
+
+    <!-- Educational comment: This layout is the overlay. It's mostly transparent. -->
+    <!-- The FrameLayout itself is clickable and will intercept touches. -->
+    <!-- In a real attack, this might be completely transparent (e.g., #00000000) -->
+    <!-- or designed to look like a legitimate UI element (e.g., a fake dialog). -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="100dp"
+        android:text="DECEPTIVE OVERLAY CONTENT\n(Tap anywhere here)"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:background="#A0FF0000" <!-- Slightly visible red background for the text -->
+        android:padding="10dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="[Hidden Button Below Me]"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#50000000"/>
+
+
+    <!-- This is an important comment for the user/tester -->
+    <!-- This entire screen is an overlay. Tapping it will trigger the overlay's click listener. -->
+    <!-- The goal of Tapjacking is to make the user unknowingly tap something on the screen underneath. -->
+    <!-- For this demo, the overlay is made slightly visible. -->
+
+</FrameLayout>

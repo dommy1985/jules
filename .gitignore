@@ -1,0 +1,23 @@
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.gradle/
+local.properties
+captures/
+.DS_Store
+
+# Build files
+build/
+*/build/
+
+# Gradle files
+gradle-wrapper.jar # It's often recommended to commit gradlew and gradlew.bat but not the jar
+# If you choose to commit gradle-wrapper.jar, remove the line above.
+# For this demo, we'll assume the gradlew scripts will fetch it.
+
+# Keystore files (IMPORTANT: Never commit keystore files)
+*.jks
+*.keystore
+
+# Log files
+*.log
