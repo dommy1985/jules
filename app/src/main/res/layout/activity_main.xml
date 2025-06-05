@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is the background activity."
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/launch_overlay_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Launch Overlay (Simulate Attack)"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/teal_700"/>
+
+    <!-- Educational comment: The two buttons below demonstrate the XML-based defense. -->
+    <!-- android:filterTouchesWhenObscured="true" makes these buttons ignore taps if they are obscured by another window (like our overlay). -->
+    <Button
+        android:id="@+id/sensitive_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensitive Action 1 (XML Defense)"
+        android:layout_marginBottom="16dp"
+        android:filterTouchesWhenObscured="true"/>
+
+    <Button
+        android:id="@+id/sensitive_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensitive Action 2 (XML Defense)"
+        android:filterTouchesWhenObscured="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+(This screen simulates an app with sensitive actions)
+With XML defense: android:filterTouchesWhenObscured="true""
+        android:gravity="center"
+        android:layout_marginTop="32dp"/>
+
+</LinearLayout>
